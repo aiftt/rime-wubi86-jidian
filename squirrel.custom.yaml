@@ -1,6 +1,7 @@
 patch:
   style:
-    color_scheme: roseo_maple               # 写当前名，也就是下面皮肤的 name 内容
+    # color_scheme: roseo_maple               # 写当前名，也就是下面皮肤的 name 内容
+    color_scheme: zcheng               # 写当前名，也就是下面皮肤的 name 内容
 
   #-----------------#
   #    颜色使用说明   #
@@ -17,6 +18,74 @@ patch:
   # 一般字体不需要指定，指定后的字体可能会出现候选框被拉伸成过高的情况，因为不同字体的纵向高度不同，默认字体适配最好
 
   preset_color_schemes:
+    zcheng:
+      author: "凝渊<gccll.love@gmail.com"
+      back_color: 0x000000 # 候选条背景色，24位色值，16进制，BGR顺序
+      border_color: 0x5C21FF # 边框色
+      text_color: 0xCCAA88 # 拼音行文字颜色
+      hilited_back_color: 0x8440DD # 第一候选项背景背景色
+      hilited_candidate_text_color: 0xFFFFFF # 第一候选项文字颜色
+      hilited_candidate_back_color: 0xFF0D2D # 第一候选项背景颜色
+      hilited_candidate_label_color: 0x30BB55 # 第一候选项编号颜色
+      hilited_comment_text_color: 0x999999 # 注解文字高亮
+      hilited_text_color: 0xFECB96 # 高亮拼音 (需要开启内嵌编码)
+      candidate_text_color: 0x30BB55 # 预选项文字颜色
+      comment_text_color: 0x3EDDC8 # 拼音等提示文字颜色
+      horizontal: false # 水平排列
+      inline_preedit: true # 单行显示，false双行显示
+      label_color: 0x30BB55 # 预选栏编号颜色
+      # candidate_label_color: 0x999999 # 候选编号颜色
+      candidate_format: "%c\u2005%@" # 用 1/6 em 空格 U+2005 来控制编号 %c 和候选词 %@ 前后的空间
+      font_face: "PingFangSC" # 候选词编号字体
+      font_point: 16 # 候选文字大小
+      label_font_point: 13 # 候选编号大小
+      corner_radius: 5 # 候选条圆角
+      hilited_corner_radius: 5 # 高亮圆角
+      border_height: 4 # 窗口上下高度
+      border_width: 4 # 窗口左右宽度
+      border_color_width: 0 # 输入条边框宽度
+
+    # 对 purity_of_form 略微调整颜色，让色彩更柔和点，补全其他选项和注释
+    purity_of_form_custom:
+      name: "純粹的形式／Purity of Form Custom"
+      author: 雨過之後、佛振
+      font_face: ""                   # 字体及大小
+      font_point: 18
+      label_font_face: "Helvetica"    # 序号字体及大小
+      label_font_point: 12
+      comment_font_face: "Helvetica"  # 注字体及大小
+      comment_font_point: 16
+      candidate_list_layout: stacked  # 候选排布：层叠 stacked | 行 linear
+      text_orientation: horizontal    # 行文向： 横 horizontal | 纵 vertical
+      inline_preedit: true            # 拼音位于： 候选框 false | 行内 true
+      translucency: false             # 磨砂： false | true
+      mutual_exclusive: false         # 色不叠加： false | true
+      border_height: 0               # 外边框 高
+      border_width: 0                # 外边框 宽
+      corner_radius: 10              # 外边框 圆角半径
+      hilited_corner_radius: 0       # 选中框 圆角半径
+      surrounding_extra_expansion: 0 # 候选项背景相对大小？
+      shadow_size: 0                 # 阴影大小
+      line_spacing: 5                # 行间距
+      base_offset: 0                 # 字基高
+      alpha: 1                       # 透明度，0~1
+      spacing: 10                    # 拼音与候选项之间的距离 （inline_preedit: false）
+      color_space: srgb                       # 色彩空间： srgb | display_p3
+      back_color: 0x545554                    # 底色
+      hilited_candidate_back_color: 0xE3E3E3  # 选中底色
+      label_color: 0xBBBBBB                   # 序号颜色
+      hilited_candidate_label_color: 0x4C4C4C # 选中序号颜色
+      candidate_text_color: 0xEEEEEE          # 文字颜色
+      hilited_candidate_text_color: 0x000000  # 选中文字颜色
+      comment_text_color: 0x808080            # 注颜色
+      hilited_comment_text_color: 0x808080    # 选中注颜色
+      text_color: 0x808080                    # 拼音颜色 （inline_preedit: false）
+      hilited_text_color: 0xEEEEEE            # 选中拼音颜色 （inline_preedit: false）
+      # candidate_back_color:                 # 候选项底色
+      # preedit_back_color:                   # 拼音底色 （inline_preedit: false）
+      # hilited_back_color:                   # 选中拼音底色 （inline_preedit: false）
+      # border_color:                         # 外边框颜色
+
     roseo_maple:
       name: 玫枫 / Roseo Maple
       author: "KyleBing <http://kylebing.cn>"
@@ -84,6 +153,8 @@ patch:
 
 # --- 特定程序定义初始状态的英文输入 ---
   app_options:
+    org.gnu.Emacs:
+      ascii_mode: true
     com.termius-dmg.mac: # Terminal - Mac
       ascii_mode: true
 #    com.google.Chrome: # Chrome

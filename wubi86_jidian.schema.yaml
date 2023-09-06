@@ -5,7 +5,8 @@ schema:
   schema_id: wubi86_jidian
   name: "极点五笔86"
   version: "1.0"
-  icon: "wubi86_jidian.ico"           # string 方案图标，格式： .ico
+  # icon: "wubi86_jidian.ico"           # string 方案图标，格式： .ico
+  icon: "cheng.ico"           # string 方案图标，格式： .ico
   ascii_icon:                         # string
   author:
     - 创始人 王永民先生
@@ -76,7 +77,7 @@ translator:
   preedit_format:                       # 上屏码自定义
 #    - xform/.+//
   comment_format:                       # 提示码自定义
-    - xform/.+//                        # 当前默认不提示编码，消除所有候选词后的提示码
+    # - xform/.+//                        # 当前默认不提示编码，消除所有候选词后的提示码
 
 
 # 简入繁出 通过 OpenCC 支持 github地址：https://github.com/BYVoid/OpenCC
@@ -108,7 +109,7 @@ reverse_lookup:
     - xform/([jqxy])v/$1u/
 punctuator:
   import_preset: default
-#  import_preset: symbols
+  # import_preset: symbols
 # 开始快捷输入符号功能，前面留两个空格
 # 对应需要将下面 recognizer -> patterns 下面的 punct 字段的注释去掉
 
@@ -118,6 +119,6 @@ key_binder:
 recognizer:
   import_preset: default
   patterns:
-#    punct: "^/([0-9]+[a-z]*|[a-z]+)$" # 注意前方需要有4个空格，跟下面对齐
+    # punct: "^/([0-9]+[a-z]*|[a-z]+)$" # 注意前方需要有4个空格，跟下面对齐
     reverse_lookup: "^z[a-z]*'?$" # 反查词条的正则
     calculator: "^coco.*$" # 计算器

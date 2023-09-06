@@ -13,6 +13,7 @@ schema:
   description: |
     五笔字形 86 极点极爽版，方案由 KyleBing 修改 - 2019年11月08日 10:26
   dependencies:
+    - melt_eng  # 英文输入，作为次翻译器挂载到拼音方案
 #    - pinyin_simp
 
 switches:
@@ -49,6 +50,7 @@ engine:
     - punct_translator
     - reverse_lookup_translator
     - table_translator
+    - table_translator@melt_eng           # 英文输入
     - lua_translator@date_translator # 自定义系统变量输出
     - lua_translator@calculator # 计算器：二元运算，coco 开头，如 coco56*34 coco24/1024
   filters:
@@ -107,6 +109,16 @@ reverse_lookup:
     - xform/([nl])v/$1ü/
     - xform/([nl])ue/$1üe/
     - xform/([jqxy])v/$1u/
+
+
+# 次翻译器，英文
+melt_eng:
+  dictionary: melt_eng     # 挂载词库 melt_eng.dict.yaml
+  enable_completion: true  # 补全提示
+  enable_sentence: false   # 禁止造句
+  enable_user_dict: false  # 禁用用户词典
+  initial_quality: 1.1     # 初始权重
+
 punctuator:
   import_preset: default
   # import_preset: symbols

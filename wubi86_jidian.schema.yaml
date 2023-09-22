@@ -117,7 +117,7 @@ melt_eng:
   enable_completion: true  # 补全提示
   enable_sentence: false   # 禁止造句
   enable_user_dict: false  # 禁用用户词典
-  initial_quality: 1.1     # 初始权重
+  initial_quality: 0     # 初始权重
 
 punctuator:
   import_preset: default
